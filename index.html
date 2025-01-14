@@ -144,7 +144,6 @@
     padding: 20px;
 }
 
-/* Style the container div */
 .image-container {
     display: flex;
     justify-content: center;  
@@ -153,16 +152,13 @@
     overflow: hidden;         
 }
 
-/* Style the image */
 .screenshot {
     max-width: 100%;        
     height: auto;           
     
-    /* Animation to make the image move up and down */
     animation: moveUpDown 5s ease-in-out infinite; 
 }
 
-/* Keyframes for the move-up-down animation */
 @keyframes moveUpDown {
     0% {
         transform: translateY(0); 
@@ -381,7 +377,28 @@
     </footer>
 
     <script>
-        function toggleLanguage() {
+
+ const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navbarToggler.addEventListener('click', () => {
+      const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+      navbarToggler.setAttribute('aria-expanded', !isExpanded);
+      navbarCollapse.classList.toggle('show');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) {
+          navbarToggler.setAttribute('aria-expanded', 'false');
+          navbarCollapse.classList.remove('show');
+        }
+      });
+    });
+
+
+        function toggleLanguage() {            
             const enElements = document.querySelectorAll('.content-en, .nav-en');
             const arElements = document.querySelectorAll('.content-ar, .nav-ar');
 
