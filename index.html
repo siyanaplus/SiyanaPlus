@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siyana Plus App</title>
+    <style>
+        #logo img {
+            width: fit-content;
+        }
+        body {
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #fff;
+            direction: ltr;
+        }
+
+        header {
+            background-color: #000;
+            color: #FFD700;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #FFD700;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #FFD700;
+            color: #000;
+        }
+
+        .language-switcher {
+            cursor: pointer;
+            border: 2px solid #FFD700;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: #FFD700;
+            color: #000;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .language-switcher:hover {
+            background-color: #000;
+            color: #FFD700;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 100%;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #FFD700;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        section h1,
+        section h2 {
+            color: #FFD700;
+            text-align: center;
+            font-family: 'Georgia', serif;
+        }
+
+        section p {
+            text-align: center;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        section ul li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: #000;
+            color: #FFD700;
+            margin: 5px 0;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #FFD700;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        section ul li img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #000;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+        #home {
+    text-align: center; 
+    padding: 20px;
+}
+
+/* Style the container div */
+.image-container {
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    height: 1000px;            
+    overflow: hidden;         
+}
+
+/* Style the image */
+.screenshot {
+    max-width: 100%;        
+    height: auto;           
+    
+    /* Animation to make the image move up and down */
+    animation: moveUpDown 5s ease-in-out infinite; 
+}
+
+/* Keyframes for the move-up-down animation */
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-40px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+    
+}
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="images/logo.JPG" alt="Siyana Plus Logo" width="50" height="50">
+        </div>
+        <nav>
+            <a href="#home" class="nav-en">Home</a>
+            <a href="#features" class="nav-en">Features</a>
+            <a href="#how-it-works" class="nav-en">How It Works</a>
+            <a href="#benefits" class="nav-en">Benefits</a>
+            <a href="#contact" class="nav-en">Contact</a>
+
+            <a href="#contact-ar" class="nav-ar hidden">اتصل بنا</a>
+            <a href="#benefits-ar" class="nav-ar hidden">الفوائد</a>
+            <a href="#how-it-works-ar" class="nav-ar hidden">كيف يعمل</a>
+            <a href="#features-ar" class="nav-ar hidden">الميزات</a>
+            <a href="#home-ar" class="nav-ar hidden">الرئيسية</a>
+           
+            
+           
+            
+        </nav>
+        <div class="language-switcher" onclick="toggleLanguage()">عربي</div>
+        
+    </header>
+
+    <main>
+        <!-- English Content -->
+        <section id="home" class="content-en">
+            <h1>Revolutionize Vehicle Maintenance</h1>
+            <p>Stay ahead with proactive maintenance alerts and personalized services powered by AI.</p>
+            <div class="image-container">
+                <img src="images/Picture1.png" alt="Car Maintenance Service" class="screenshot" > 
+            </div>
+        </section>
+
+        <section id="features" class="content-en">
+            <h2>Features</h2>
+            <ul>
+                <li>
+                    <img src="images/icons8-car-service-100.png" alt="Maintenance Tracking">
+                    Maintenance Tracking
+                </li>
+                <li>
+                    <img src="images/icons8-alert-100.png" alt="Proactive Alerts">
+                    Proactive Alerts
+                </li>
+                <li>
+                    <img src="images/icons8-emergency-100.png" alt="Emergency Assistance">
+                    Emergency Assistance
+                </li>
+                <li>
+                    <img src="images/icons8-recommendation-100.png" alt="Personalized Recommendations">
+                    Personalized Recommendations
+                </li>
+                <li>
+                    <img src="images/icons8-customer-insight-100.png" alt="AI-Driven Insights">
+                    AI-Driven Insights
+                </li>
+            </ul>
+        </section>
+
+        <section id="how-it-works" class="content-en">
+            <h2>How It Works</h2>
+            <p>Connect your car, receive alerts, and enjoy tailored solutions to keep your vehicle running smoothly.</p>
+        </section>
+
+        <section id="benefits" class="content-en">
+            <h2>Benefits</h2>
+            <ul>
+                <li>
+                    <img src="images/icons8-time-100.png" alt="Save time">
+                    Save time with proactive alerts
+                </li>
+                <li>
+                    <img src="images/icons8-cost-100.png" alt="Reduce costs">
+                    Reduce costs with AI-driven recommendations
+                </li>
+                <li>
+                    <img src="images/icons8-support-100.png" alt="Emergency support">
+                    Enjoy peace of mind with emergency support
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact" class="content-en">
+            <h2>Contact Us</h2>
+            <p>Email: Siyanaplusoman@gmail.com</p>
+            <p>Phone: +968 XXXXXX</p>
+            <p>
+                Follow us:
+                <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+            </p>
+        </section>
+
+        <!-- Arabic Content -->
+        <section id="home-ar" class="content-ar hidden">
+            <h1>ثورة في صيانة المركبات</h1>
+           <b> <p>ابقَ على اطلاع دائم بالصيانة الوقائية والخدمات المخصصة المدعومة بالذكاء الاصطناعي</p></b>
+            <div class="image-container">
+                <img src="images/Picture1.png" alt="Car Maintenance Service" class="screenshot"> <!-- Car maintenance image -->
+            </div>
+        </section>
+
+        <section id="features-ar" class="content-ar hidden">
+            <h2>الميزات</h2>
+            <ul>
+                <li>
+                    <img src="images/icons8-car-service-100.png" alt="تتبع الصيانة">
+                    تتبع الصيانة
+                </li>
+                <li>
+                    <img src="images/icons8-alert-100.png" alt="تنبيهات استباقية">
+                    تنبيهات استباقية
+                </li>
+                <li>
+                    <img src="images/icons8-emergency-100.png" alt="مساعدة الطوارئ">
+                    مساعدة الطوارئ
+                </li>
+                <li>
+                    <img src="images/icons8-recommendation-100.png" alt="توصيات مخصصة">
+                    توصيات مخصصة
+                </li>
+                <li>
+                    <img src="images/icons8-customer-insight-100.png" alt="رؤى بالذكاء الاصطناعي">
+                    رؤى بالذكاء الاصطناعي
+                </li>
+            </ul>
+        </section>
+
+        <section id="how-it-works-ar" class="content-ar hidden">
+            <h2>كيف يعمل</h2>
+            <b><p>قم بتوصيل سيارتك، وتلقَ التنبيهات، واستمتع بحلول مخصصة للحفاظ على سيارتك في حالة ممتازة</p></b>
+        </section>
+
+        <section id="benefits-ar" class="content-ar hidden">
+            <h2>الفوائد</h2>
+            <ul>
+                <li>
+                    <img src="images/icons8-time-100.png" alt="توفير الوقت">
+                    توفير الوقت مع التنبيهات الاستباقية
+                </li>
+                <li>
+                    <img src="images/icons8-cost-100.png" alt="خفض التكاليف">
+                    خفض التكاليف من خلال التوصيات المدعومة بالذكاء الاصطناعي
+                </li>
+                <li>
+                    <img src="images/icons8-support-100.png" alt="دعم الطوارئ">
+                    راحة البال مع دعم الطوارئ
+                </li>
+            </ul>
+        </section>
+        <section id="contact-ar" class="content-ar hidden">
+            <h2>تواصل معنا</h2>
+            <p>Siyanaplusoman@gmail.com :البريد الالكتروني</p>
+            <p>+968 XXXXXX :رقم الهاتف</p>
+            <p>
+                <a href="https://www.instagram.com/siyanaplus?igsh=cWJmZWFlNGc2MmI0&utm_source=qr" target="_blank">Instagram</a> |
+                <a href="www.linkedin.com/in/siyanaplus" target="_blank">LinkedIn</a>
+                :تابعنا
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Siyana+ App</p>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.content-en, .nav-en');
+            const arElements = document.querySelectorAll('.content-ar, .nav-ar');
+
+            enElements.forEach(el => el.classList.toggle('hidden'));
+            arElements.forEach(el => el.classList.toggle('hidden'));
+        }
+    </script>
+</body>
+
+</html>
